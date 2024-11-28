@@ -4,6 +4,7 @@ using DiaryApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiaryApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241128104533_Testing")]
+    partial class Testing
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,21 +53,21 @@ namespace DiaryApp.Migrations
                         {
                             Id = 1,
                             Content = "Went hiking wiht Joe!",
-                            Created = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2024, 11, 28, 11, 45, 32, 533, DateTimeKind.Local).AddTicks(4092),
                             Title = "Went hiking"
                         },
                         new
                         {
                             Id = 2,
                             Content = "Went to Disneyland wiht Joe!",
-                            Created = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2024, 11, 28, 11, 45, 32, 533, DateTimeKind.Local).AddTicks(4389),
                             Title = "Went to Disneyland"
                         },
                         new
                         {
                             Id = 3,
                             Content = "Went diving wiht Joe!",
-                            Created = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Created = new DateTime(2024, 11, 28, 11, 45, 32, 533, DateTimeKind.Local).AddTicks(4392),
                             Title = "Went diving"
                         });
                 });
