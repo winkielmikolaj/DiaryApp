@@ -8,7 +8,7 @@ namespace DiaryApp.Models
         public int Id { get; set; }
 
         [Required]
-        public required string? Title { get; set; } =string.Empty;
+        public required string? Title { get; set; } = string.Empty;
 
         [Required]
         public string Content { get; set; } = string.Empty;
