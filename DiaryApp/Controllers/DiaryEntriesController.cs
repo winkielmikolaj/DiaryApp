@@ -19,5 +19,12 @@ namespace DiaryApp.Controllers
         {
             _db = db;
         }
+
+        public IActionResult Create()
+        {
+
+
+            return View();
+        }
     }
 }
