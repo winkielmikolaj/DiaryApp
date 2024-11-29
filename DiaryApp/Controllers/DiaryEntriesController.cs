@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DiaryApp.Data;
+using DiaryApp.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DiaryApp.Controllers
 {
@@ -6,7 +8,16 @@ namespace DiaryApp.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            List<DiaryEntry> objDiaryEntriesList = _db.DiaryEntries.ToList();
+
+            return View(objDiaryEntriesList);
+        }
+
+        private readonly ApplicationDbContext _db;
+
+        public DiaryEntriesController(ApplicationDbContext db)
+        {
+            _db = db;
         }
     }
 }
