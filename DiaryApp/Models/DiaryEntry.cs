@@ -7,10 +7,12 @@ namespace DiaryApp.Models
         //[Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a Title!")]
+        [StringLength(100, MinimumLength = 3, ErrorMessage ="Title must be beyween 3 and 100 characters")]
         public required string? Title { get; set; } = string.Empty;
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a Description!")]
+        [StringLength(400, MinimumLength = 3, ErrorMessage = "Description must be beyween 3 and 400 characters")]
         public string Content { get; set; } = string.Empty;
 
         [Required]
